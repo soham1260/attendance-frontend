@@ -8,7 +8,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
   // Function to fetch data
   const fetchAttendanceData = async (currentSubject) => {
     try {
-      const DATA_URL = `http://localhost:5000/getNoOfStudentsAttended/${currentSubject}`;
+      const DATA_URL = `${process.env.REACT_APP_API_BASE_URL}/getNoOfStudentsAttended/${currentSubject}`;
       const response = await fetch(DATA_URL);
       if (!response.ok) {
         throw new Error("Failed to fetch data");

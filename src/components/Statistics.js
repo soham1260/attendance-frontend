@@ -8,7 +8,7 @@ export default function Statistics({ subjectProp }) {
   // Function to fetch data
   const fetchAttendanceData = async (currentSubject) => {
     try {
-      const DATA_URL = `http://localhost:5000/getNoSubjectStatistics/${currentSubject}`;
+      const DATA_URL = `${process.env.REACT_APP_API_BASE_URL}/getNoSubjectStatistics/${currentSubject}`;
       const response = await fetch(DATA_URL);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -37,7 +37,7 @@ export default function Statistics({ subjectProp }) {
                 <h3>Classes Taken - {data.totalDays}</h3>
                 <button style={{borderRadius:"5px"}}
                     onClick={() => {
-                        fetch("http://localhost:5000/getAttendanceReport/" + subject)
+                        fetch(process.env.REACT_APP_API_BASE_URL+"/getAttendanceReport/" + subject)
                         .then((response) => {
                             if (!response.ok) {
                             throw new Error('Network response was not ok');

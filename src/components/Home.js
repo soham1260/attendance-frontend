@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/getNameAndSubjects', {
+        const response = await fetch(process.env.REACT_APP_API_BASE_URL+'/getNameAndSubjects', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json','token' : localStorage.getItem('token') }
         });
