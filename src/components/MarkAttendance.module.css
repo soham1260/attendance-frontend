@@ -1,0 +1,60 @@
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.student-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.student-label {
+    margin: 5px 0;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.message-success {
+    color: green;
+}
+
+.message-error {
+    color: red;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,95 @@
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  .container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .container form {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .message.success {
+    color: green;
+  }
+  
+  .message.error {
+    color: red;
+  }
+  
+  .switch-mode {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .switch-mode button {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .teacher-login-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(45, 113, 239);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .teacher-login-button:hover {
+    background-color:rgb(0, 74, 211);
+    border-color: #4caf50;
+  }
+  
