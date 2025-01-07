@@ -1,0 +1,95 @@
+/* EditAttendance.module.css */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}
+
+.select-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.select-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.select-container select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.attendance-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.attendance-button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.attendance-button.present {
+    background-color: green;
+}
+
+.attendance-button.absent {
+    background-color: red;
+}
+
+.save-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}

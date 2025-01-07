@@ -1,0 +1,89 @@
+/* Home.module.css */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.dropdown {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.dropdown .btn {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.no-subjects {
+  padding: 10px;
+  text-align: center;
+  color: gray;
+}
+
+.course-register-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-register-button:hover {
+  background-color: #45a049;
+}
+
+.courses-text {
+  font-size: 19px;
+  font-weight: 600;
+  padding: 10px 20px;
+  color: #333;
+  cursor: default; /* Ensures no pointer cursor is shown */
+}

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './Login.module.css';
+import styles from './StudentLogin.module.css';
 
-const Auth = () => {
-  const [email, setEmail] = useState('');
+const StudentLogin = () => {
+  const [rollNo, setRollNo] = useState('');
   const [password, setPassword] = useState('');
   const [department, setDepartment] = useState('');
-  const [phone, setPhone] = useState('');
+  const [year, setYear] = useState('');
   const [name, setName] = useState(''); // For signup
   const [isSigningUp, setIsSigningUp] = useState(false); // Toggle between login and signup
   const [message, setMessage] = useState('');
@@ -17,8 +17,10 @@ const Auth = () => {
     e.preventDefault();
     setMessage('');
 
-    const endpoint = isSigningUp ? '/signup' : '/login';
-    const body = isSigningUp ? { name, email, department, phone, password } : { email, password };
+    const endpoint = isSigningUp ? '/student-signup' : '/student-login';
+    const body = isSigningUp
+      ? { name, rollNo, department, year, password }
+      : { rollNo, password };
 
     try {
       const response = await fetch(process.env.REACT_APP_API_BASE_URL + endpoint, {
@@ -35,7 +37,7 @@ const Auth = () => {
         setMessage(`${isSigningUp ? 'Signup' : 'Login'} successful!`);
         if (!isSigningUp) {
           localStorage.setItem('token', data.token);
-          navigate('/');
+          navigate('/student-home');
         } else {
           setIsSigningUp(false); // Switch to login after successful signup
         }
@@ -50,7 +52,7 @@ const Auth = () => {
 
   return (
     <div className={styles.container}>
-            <h2>{isSigningUp ? 'Teacher Signup' : 'Teacher Login'}</h2>
+            <h2>{isSigningUp ? 'Student Signup' : 'Student Login'}</h2>
             <form onSubmit={handleSubmit}>
                 {isSigningUp && (
                     <div className={styles['form-group']}>
@@ -66,37 +68,37 @@ const Auth = () => {
                 )}
                 <div className={styles['form-group']}>
                     <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type="text"
+                        placeholder="Roll Number"
+                        value={rollNo}
+                        onChange={(e) => setRollNo(e.target.value)}
                         required
                         className={styles['input-field']}
                     />
                 </div>
                 {isSigningUp && (
-                    <div className={styles['form-group']}>
-                        <input
-                            type="text"
-                            placeholder="Department"
-                            value={department}
-                            onChange={(e) => setDepartment(e.target.value)}
-                            required
-                            className={styles['input-field']}
-                        />
-                    </div>
-                )}
-                {isSigningUp && (
-                    <div className={styles['form-group']}>
-                        <input
-                            type="tel"
-                            placeholder="Phone"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            required
-                            className={styles['input-field']}
-                        />
-                    </div>
+                    <>
+                        <div className={styles['form-group']}>
+                            <input
+                                type="text"
+                                placeholder="Department"
+                                value={department}
+                                onChange={(e) => setDepartment(e.target.value)}
+                                required
+                                className={styles['input-field']}
+                            />
+                        </div>
+                        <div className={styles['form-group']}>
+                            <input
+                                type="number"
+                                placeholder="Year"
+                                value={year}
+                                onChange={(e) => setYear(e.target.value)}
+                                required
+                                className={styles['input-field']}
+                            />
+                        </div>
+                    </>
                 )}
                 <div className={styles['form-group']}>
                     <input
@@ -124,16 +126,15 @@ const Auth = () => {
                         setIsSigningUp(!isSigningUp);
                         setMessage('');
                     }}
-                    className="no-cursor-hover"
                 >
                     {isSigningUp ? 'Login here' : 'Signup here'}
                 </button>
             </p>
-            <button onClick={() => navigate('/student-login')} className={styles['student-login-button']}>
-                Go to Student Login
+            <button onClick={() => navigate('/login')} className={styles['teacher-login-button']}>
+                Go to Teacher Login
             </button>
         </div>
   );
 };
 
-export default Auth;
+export default StudentLogin;
