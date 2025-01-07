@@ -103,6 +103,34 @@ const EditAttendance = () => {
     }
   };
 
+  // Delete selected attendance record
+  const deleteAttendance = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/attendance/delete`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          course: subjectCode,
+          date: selectedDate,
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setMessage('Attendance record deleted successfully!');
+        setDates((prevDates) => prevDates.filter((d) => d !== selectedDate));
+        setSelectedDate('');
+        setStudents([]);
+      } else {
+        setMessage(`Failed to delete attendance: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error deleting attendance:', error);
+      setMessage('Failed to delete attendance.');
+    }
+  };
+
   return (
     <div className={styles.container}>
             <h1>Edit Attendance</h1>
@@ -157,6 +185,9 @@ const EditAttendance = () => {
                     </table>
                     <button className={styles['save-button']} onClick={saveAttendance}>
                         Save Changes
+                    </button>
+                    <button className={styles['delete-button']} onClick={deleteAttendance}>
+                      Delete Attendance
                     </button>
                 </div>
             )}

@@ -75,6 +75,10 @@ const MarkAttendance = () => {
       const data = await response.json();
       if (response.ok) {
         setMessage("Attendance marked successfully!");
+        navigate("/subject-details", { state: { 
+          subject: selectedSubject, 
+          successMessage: "Attendance was successfully marked!" 
+        } });
       } else {
         setMessage(data.error || "Failed to mark attendance.");
       }
