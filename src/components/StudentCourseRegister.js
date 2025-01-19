@@ -82,8 +82,11 @@ const StudentCourseRegister = () => {
   };
 
   return (
-    <div className={styles.container}>
-            <h2>Register for a Course</h2>
+    <div>
+      <div style={{display:"flex",justifyContent:"center",marginTop:"20px"}}>
+        <p style={{fontSize:"30px"}}>Register for a Course</p>
+      </div>
+      <div className={styles.container}>
             <form onSubmit={handleRegisterCourse}>
                 <div className={styles['form-group']}>
                     <label>Select Course:</label>
@@ -111,6 +114,7 @@ const StudentCourseRegister = () => {
 
             {message && <p className={styles.message}>{message}</p>}
         </div>
+    </div>
   );
 };
 

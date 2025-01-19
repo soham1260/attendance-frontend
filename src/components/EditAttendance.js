@@ -132,8 +132,12 @@ const EditAttendance = () => {
   };
 
   return (
-    <div className={styles.container}>
-            <h1>Edit Attendance</h1>
+    <div>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:"20px"}}>
+        <p style={{fontSize:"40px"}}>Edit Attendance</p>
+      </div>
+      <div className={styles.container}>
+            <div className={styles['attendance']}>
             <button
                 className={styles['back-button']}
                 onClick={() => navigate("/subject-details", { state: { subject: subject } })}
@@ -155,7 +159,7 @@ const EditAttendance = () => {
             </div>
             {selectedDate && (
                 <div>
-                    <h2>Attendance for {selectedDate}</h2>
+                    <h2 style={{paddingTop:"15px"}}>Attendance for {selectedDate}</h2>
                     <table className={styles['attendance-table']}>
                         <thead>
                             <tr>
@@ -192,7 +196,9 @@ const EditAttendance = () => {
                 </div>
             )}
             {message && <p className={styles.message}>{message}</p>}
+            </div>
         </div>
+    </div>
   );
 };
 

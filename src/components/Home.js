@@ -67,9 +67,13 @@ export default function Home() {
   },[navigate]);
 
   return (
-    <div className={styles.container}>
-            <div className={styles.header}>
-                <h1>Welcome, {teacher}</h1>
+    <div>
+      <div style={{display:"flex",justifyContent:"center",marginTop:"20px"}}>
+        <p style={{fontSize:"50px"}}>Attendance Tracker</p>
+      </div>
+      <div className={styles.container}>
+            <div className={styles.header} style={{backgroundColor:"#A0A4B8",borderRadius:"10px"}}>
+                <h1 style={{paddingLeft:"20px",color:"white"}}>Welcome, {teacher}</h1>
                 <button
                     className={styles['logout-button']}
                     onClick={() => {
@@ -81,15 +85,16 @@ export default function Home() {
                 </button>
             </div>
             <div className={styles.dropdown}>
-                <span
+                <p
                     className={`${styles['courses-text']}`}
                 >
                     Courses
-                </span>
+                </p>
+                <hr style={{height:"1px",backgroundColor:"#ffffff",border:"none",opacity:"1",marginLeft:"2.5%",marginTop:"0",marginBottom:"10px",width:"95%"}}></hr>
                 <ul className={styles['dropdown-menu']}>
                     {data?.subjects?.length > 0 ? (
                         data.subjects.map((subject) => (
-                            <li key={subject.code}>
+                            <li key={subject.code} style={{marginBottom:"10px",marginTop:"0px"}}>
                                 <button
                                     className={styles['dropdown-item']}
                                     onClick={() => handleSubjectSelect(subject)}
@@ -103,12 +108,15 @@ export default function Home() {
                     )}
                 </ul>
             </div>
-            <button
-                onClick={goToCourseRegister}
-                className={styles['course-register-button']}
-            >
-                Go to Course Register
-            </button>
+            <div style={{display:"flex",justifyContent:"center"}}>
+              <button
+                  onClick={goToCourseRegister}
+                  className={styles['course-register-button']}
+              >
+                  Go to Course Register
+              </button>
+            </div>
         </div>
+    </div>
   )
 }

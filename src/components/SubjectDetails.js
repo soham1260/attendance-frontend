@@ -47,9 +47,9 @@ const SubjectDetails = () => {
                     {successMessage}
                 </p>
             )}
-            <h1>Subject Details</h1>
-            <p>Subject Name: {subject.name}</p>
-            <p>Subject Code: {subject.code}</p>
+            <p style={{fontSize:"50px"}}>Subject Details</p>
+            <p style={{fontSize:"20px"}}>Subject Name: {subject.name}</p>
+            <p style={{fontSize:"20px"}}>Subject Code: {subject.code}</p>
 
             <div className={styles['buttons-container']}>
                 <button
@@ -60,6 +60,7 @@ const SubjectDetails = () => {
                 </button>
                 {!attendanceExists && (
                     <button
+                      className={styles['home-button']}
                       onClick={() =>
                         navigate("/mark-attendance", {
                           state: {
@@ -74,6 +75,7 @@ const SubjectDetails = () => {
                     </button>
                 )}
                 <button
+                    className={styles['home-button']}
                     onClick={() =>
                         navigate("/edit-attendance", {
                             state: {

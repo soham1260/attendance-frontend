@@ -1,9 +1,11 @@
 .container {
-    max-width: 400px;
+    width: 600px;
     margin: 50px auto;
     text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-top: 1%;
   }
-  
   .container h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -16,7 +18,9 @@
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin: 0%;
+    padding: 0%;
+    width: 80%;
   }
   
   .input-field {
@@ -27,6 +31,9 @@
     border-radius: 5px;
     box-sizing: border-box;
     transition: border-color 0.3s;
+    margin: 10%;
+    margin-top: 0%;
+    margin-bottom: 0%;
   }
   
   .input-field:focus {
@@ -44,6 +51,9 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 0%;
+    width: 20%;
+    margin-left: 40%;
   }
   
   .submit-button:hover {
@@ -64,7 +74,7 @@
   }
   
   .switch-mode {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 14px;
   }
   
@@ -72,13 +82,23 @@
     background: none;
     border: none;
     color: #007bff;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     padding: 0;
   }
+
+  .switch-mode button:hover {
+    background: none;
+    border: none;
+    color: inherit; /* Matches the text color of the parent or default color */
+    text-decoration: none;
+    box-shadow: none; /* Ensures no shadow effect */
+    transition: none; /* Disables hover animations */
+  }
   
   .teacher-login-button {
-    margin-top: 20px;
+    margin: 0%;
+    margin-bottom: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;

@@ -51,8 +51,12 @@ const StudentLogin = () => {
   };
 
   return (
-    <div className={styles.container}>
-            <h2>{isSigningUp ? 'Student Signup' : 'Student Login'}</h2>
+    <div>
+      <div style={{display:"flex",justifyContent:"center",marginTop:"20px"}}>
+          <p style={{fontSize:"50px"}}>Attendance Tracker</p>
+      </div>
+      <div className={styles.container}>
+            <h2 style={{paddingTop:"5%"}}>{isSigningUp ? 'Student Signup' : 'Student Login'}</h2>
             <form onSubmit={handleSubmit}>
                 {isSigningUp && (
                     <div className={styles['form-group']}>
@@ -134,6 +138,7 @@ const StudentLogin = () => {
                 Go to Teacher Login
             </button>
         </div>
+    </div>
   );
 };
 

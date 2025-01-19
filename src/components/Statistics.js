@@ -1,4 +1,5 @@
 import React,{ useState,useEffect } from 'react'
+import excel from "../assets/excel.png"
 
 export default function Statistics({ subjectProp }) {
     const [subject, setSubject] = useState("");
@@ -32,10 +33,10 @@ export default function Statistics({ subjectProp }) {
     <>
     {
         !loading && (
-            <div>
+            <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <h3>Average Attendace - {data.averageAttendancePercentage}%</h3>
                 <h3>Classes Taken - {data.totalDays}</h3>
-                <button style={{borderRadius:"5px"}}
+                <button style={{borderRadius:"5px",display:"flex",justifyContent:"space-between",backgroundColor:"#21D19F"}}
                     onClick={() => {
                         fetch(process.env.REACT_APP_API_BASE_URL+"/getAttendanceReport/" + subject)
                         .then((response) => {
@@ -64,7 +65,8 @@ export default function Statistics({ subjectProp }) {
                         });
                     }}
                     >
-                    Download Attendance
+                    <p style={{padding:"0",margin:"0",color:"white",fontSize:"large",paddingRight:"10px"}}>Download Attendance</p>
+                    <img style={{padding:"0",margin:"0"}} src={excel} alt="excel logo" />
                 </button>
             </div>
         )

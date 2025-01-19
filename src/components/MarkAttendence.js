@@ -93,47 +93,59 @@ const MarkAttendance = () => {
   }
 
   return (
-    <div className={styles.container}>
-            <h2>Mark Attendance</h2>
-            <p>Subject: {subjectCode} {subjectName}</p>
-            {students.length > 0 ? (
-                <form onSubmit={handleSubmit}>
-                    <div className={styles['student-list']}>
-                        {students.map((student) => (
-                            <label key={student.rollNo} className={styles['student-label']}>
-                                <input
-                                    type="checkbox"
-                                    value={student.rollNo}
-                                    onChange={() => handleCheckboxChange(student.rollNo)}
-                                    checked={selectedStudents.includes(student.rollNo)}
-                                />
-                                {student.name} ({student.rollNo})
-                            </label>
-                        ))}
-                    </div>
-                    <button type="submit" className={styles['submit-button']}>
-                        Mark Attendance
-                    </button>
-                </form>
-            ) : (
-                <p>No students found for this course.</p>
-            )}
-            {message && (
-                <p
-                    className={`${styles.message} ${
-                        message.includes("successfully") ? styles['message-success'] : styles['message-error']
-                    }`}
-                >
-                    {message}
-                </p>
-            )}
-            <button
-                className={styles['back-button']}
-                onClick={() => navigate("/subject-details", { state: { subject: selectedSubject } })}
-            >
-                Back
-            </button>
+    <div>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:"20px"}}>
+        <p style={{fontSize:"40px"}}>Mark Attendance</p>
+        <p style={{fontSize:"30px"}}>Subject: {subjectCode} {subjectName}</p>
+      </div>
+      
+      <div className={styles.container}>
+            <div className={styles['attendance']}>
+              {students.length > 0 ? (
+                  <form onSubmit={handleSubmit}>
+                      <div className={styles['student-list']}>
+                          {students.map((student) => (
+                              <label key={student.rollNo} className={styles['student-label']}>
+                                  <p style={{margin:"0px"}}>
+                                    {student.rollNo}
+                                  </p>
+                                  <p style={{margin:"0px"}}>
+                                    {student.name}
+                                  </p>
+                                  <input
+                                      type="checkbox"
+                                      value={student.rollNo}
+                                      onChange={() => handleCheckboxChange(student.rollNo)}
+                                      checked={selectedStudents.includes(student.rollNo)}
+                                  />
+                              </label>
+                          ))}
+                      </div>
+                      <button type="submit" className={styles['submit-button']}>
+                          Mark Attendance
+                      </button>
+                  </form>
+              ) : (
+                  <p>No students found for this course.</p>
+              )}
+              {message && (
+                  <p
+                      className={`${styles.message} ${
+                          message.includes("successfully") ? styles['message-success'] : styles['message-error']
+                      }`}
+                  >
+                      {message}
+                  </p>
+              )}
+              <button
+                  className={styles['back-button']}
+                  onClick={() => navigate("/subject-details", { state: { subject: selectedSubject } })}
+              >
+                  Back
+              </button>
+            </div>
         </div>
+    </div>
   );
 };
 

@@ -49,8 +49,12 @@ const Auth = () => {
   };
 
   return (
-    <div className={styles.container}>
-            <h2>{isSigningUp ? 'Teacher Signup' : 'Teacher Login'}</h2>
+    <div>
+        <div style={{display:"flex",justifyContent:"center",marginTop:"20px"}}>
+            <p style={{fontSize:"50px"}}>Attendance Tracker</p>
+        </div>
+        <div className={styles.container}>
+            <h2 style={{paddingTop:"5%"}}>{isSigningUp ? 'Teacher Signup' : 'Teacher Login'}</h2>
             <form onSubmit={handleSubmit}>
                 {isSigningUp && (
                     <div className={styles['form-group']}>
@@ -124,7 +128,6 @@ const Auth = () => {
                         setIsSigningUp(!isSigningUp);
                         setMessage('');
                     }}
-                    className="no-cursor-hover"
                 >
                     {isSigningUp ? 'Login here' : 'Signup here'}
                 </button>
@@ -133,6 +136,7 @@ const Auth = () => {
                 Go to Student Login
             </button>
         </div>
+    </div>
   );
 };
 

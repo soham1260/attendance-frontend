@@ -2,21 +2,31 @@
     max-width: 600px;
     margin: 50px auto;
     text-align: center;
+    margin-top: 20px;
+}
+
+.attendance {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .student-list {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .student-label {
     margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .submit-button {
-    width: 100%;
+    width: 60%;
+    margin-left: 20%;
     padding: 10px;
     font-size: 16px;
     background-color: #4caf50;
@@ -44,7 +54,7 @@
 }
 
 .back-button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
     font-size: 14px;
     background-color: #f0f0f0;

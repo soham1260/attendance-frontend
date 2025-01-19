@@ -62,41 +62,44 @@ const CourseRegister = () => {
   };
 
   return (
-    <div className="container">
-  <h2>Register a New Course</h2>
-  <form onSubmit={handleRegisterCourse}>
     <div>
-      <label>Course Name:</label>
-      <input
-        type="text"
-        value={courseName}
-        onChange={(e) => setCourseName(e.target.value)}
-        required
-      />
+        <div style={{display:"flex",justifyContent:"center",marginTop:"20px"}}>
+          <p style={{fontSize:"30px"}}>Register a New Course</p>
+        </div>
+        <div className="container">
+        <form onSubmit={handleRegisterCourse}>
+          <div>
+            <label>Course Name:</label>
+            <input
+              type="text"
+              value={courseName}
+              onChange={(e) => setCourseName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Course Code:</label>
+            <input
+              type="text"
+              value={courseCode}
+              onChange={(e) => setCourseCode(e.target.value)}
+              required
+            />
+          </div>
+          <button
+            className="home-button"
+            type="button"
+            onClick={() => {
+              navigate("/home");
+            }}
+          >
+            Home
+          </button>
+          <button type="submit">Register Course</button>
+        </form>
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
-    <div>
-      <label>Course Code:</label>
-      <input
-        type="text"
-        value={courseCode}
-        onChange={(e) => setCourseCode(e.target.value)}
-        required
-      />
-    </div>
-    <button
-      className="home-button"
-      type="button"
-      onClick={() => {
-        navigate("/home");
-      }}
-    >
-      Home
-    </button>
-    <button type="submit">Register Course</button>
-  </form>
-  {message && <p className="message">{message}</p>}
-</div>
-
   );
 };
 

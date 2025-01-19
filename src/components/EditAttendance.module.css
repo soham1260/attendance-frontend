@@ -1,10 +1,14 @@
-/* EditAttendance.module.css */
 .container {
     max-width: 800px;
     margin: 50px auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
     text-align: center;
+    margin-top: 20px;
+}
+
+.attendance {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .back-button {

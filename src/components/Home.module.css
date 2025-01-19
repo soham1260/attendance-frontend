@@ -3,14 +3,16 @@
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 10px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .header h1 {
@@ -20,10 +22,11 @@
 
 .logout-button {
   padding: 10px 20px;
+  margin-right: 10px;
   background-color: #f44336;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -33,8 +36,10 @@
 }
 
 .dropdown {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: left;
+  border-radius: 10px;
+  background-color: #A0A4B8;
 }
 
 .dropdown .btn {
@@ -42,22 +47,29 @@
   background-color: #6c757d;
   color: white;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .dropdown-menu {
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+  margin-bottom: 0%;
 }
 
 .dropdown-item {
+  margin: 0%;
+  margin-left: 15px;
   padding: 10px 20px;
   cursor: pointer;
+  padding-top: 10px;
+  background-color: #21D19F;
+  border-radius: 5  px;
 }
 
 .dropdown-item:hover {
-  background-color: #f1f1f1;
+  background-color: #45B69C;
 }
 
 .no-subjects {
@@ -68,6 +80,7 @@
 
 .course-register-button {
   padding: 10px 20px;
+  margin: 0%;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -77,13 +90,15 @@
 }
 
 .course-register-button:hover {
-  background-color: #45a049;
+  background-color: #0e8e12;
 }
 
 .courses-text {
-  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 30px;
   font-weight: 600;
-  padding: 10px 20px;
-  color: #333;
+  color: #ffffff;
   cursor: default; /* Ensures no pointer cursor is shown */
 }
